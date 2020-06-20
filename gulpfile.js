@@ -1,5 +1,5 @@
 const settings = {
-  preprocesor: 'scss', // less or scss (default less)
+  preprocesor: 'less', // less or scss (default less)
 }
 
 let source_folder = '#src';

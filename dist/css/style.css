@@ -2,18 +2,18 @@
   font-family: "BalsamiqSans-Bold";
   font-display: swap;
   src: url("../fonts/BalsamiqSans-Bold.eot");
-  src: url("../fonts/BalsamiqSans-Bold.eot") format("embedded-opentype"), url("../fonts/BalsamiqSans-Bold.woff") format("woff"), url("../fonts/BalsamiqSans-Bold.woff2") format("woff2"), url("../fonts/BalsamiqSans-Bold.ttf") format("truetype"), url("../fonts/BalsamiqSans-Bold.svg#BalsamiqSans-Bold") format("svg");
+  src: url("../fonts/BalsamiqSans-Bold.eot") format("embedded-opentype") url("../fonts/BalsamiqSans-Bold.woff") format("woff"), url("../fonts/BalsamiqSans-Bold.woff2") format("woff2"), url("../fonts/BalsamiqSans-Bold.ttf") format("truetype"), url("../fonts/BalsamiqSans-Bold.svg##{$font_name}") format("svg");
 }
 
 @font-face {
   font-family: "Robotoregular";
   font-display: swap;
   src: url("../fonts/Robotoregular.eot");
-  src: url("../fonts/Robotoregular.eot") format("embedded-opentype"), url("../fonts/Robotoregular.woff") format("woff"), url("../fonts/Robotoregular.woff2") format("woff2"), url("../fonts/Robotoregular.ttf") format("truetype"), url("../fonts/Robotoregular.svg#Robotoregular") format("svg");
+  src: url("../fonts/Robotoregular.eot") format("embedded-opentype") url("../fonts/Robotoregular.woff") format("woff"), url("../fonts/Robotoregular.woff2") format("woff2"), url("../fonts/Robotoregular.ttf") format("truetype"), url("../fonts/Robotoregular.svg##{$font_name}") format("svg");
 }
 
 .test {
-  font-size: 25px;
+  font-size: 50px;
 }
 
 .section {
@@ -37,7 +37,7 @@ img {
 .author {
   width: 60%;
   height: auto;
-  font-size: 30px;
+  font-size: 40px;
 }
 
 .act {
@@ -51,7 +51,7 @@ img {
 .act > div {
   width: 50%;
   height: 200px;
-  background-image: url("../img/author_1.png");
+  background-image: url('../img/author_1.png');
 }
 
 p {
@@ -59,27 +59,9 @@ p {
   color: red;
 }
 
-.your_class {
-  width: 500px;
-  height: 200px;
-  background: red;
-}
-
-.your_class p {
-  font-size: 20px;
-}
-
 @media (max-width: 768px) {
   p {
     font-size: 20px;
-  }
-
-  .your_class {
-    width: 300px;
-  }
-
-  .your_class p {
-    font-size: 16px;
   }
 }
 
