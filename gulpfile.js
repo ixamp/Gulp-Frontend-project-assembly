@@ -18,7 +18,9 @@ let path = {
     less: source_folder + '/less/style.less',
     scss: source_folder + '/scss/style.scss',
     js: [source_folder + '/js/**/*.js', '!' + source_folder + '/js/**/_*.js'],
-    img: source_folder + '/img/**/*{.JPG,.jpg,.PNG,.png,.gif,.svg,.webp,.ico}',
+    imgSrc: source_folder + '/img/src/**/*{.JPG,.jpg,.PNG,.png,.gif,.svg,.webp,.ico}',
+    img: source_folder + '/img/dist/**/*{.JPG,.jpg,.PNG,.png,.gif,.svg,.webp,.ico}',
+    imgDist: source_folder + '/img/dist/',
     fonts: source_folder + '/fonts/**/*.ttf'
   },
   watch: {
@@ -26,7 +28,7 @@ let path = {
     less: source_folder + '/less/**/*.less',
     scss: source_folder + '/scss/**/*.scss',
     js: source_folder + '/js/**/*.js',
-    img: source_folder + '/img/**/*{.JPG,.jpg,.PNG,.png,.gif,.GIF,.svg,.SVG,.webp,.WEBP,.ico,.ICO}'
+    img: source_folder + '/img/dist/**/*{.JPG,.jpg,.PNG,.png,.gif,.GIF,.svg,.SVG,.webp,.WEBP,.ico,.ICO}'
   },
   clean: './' + project_folder + '/'
 }
@@ -51,7 +53,8 @@ let { src, dest } = require('gulp'),
   webp_css = require('gulp-webpcss'),
   ttf2woff = require('gulp-ttf2woff'),
   ttf2woff2 = require('gulp-ttf2woff2'),
-  ttf2eot = require('gulp-ttf2eot')
+  ttf2eot = require('gulp-ttf2eot'),
+  newer = require('gulp-newer')
 
 
 function browserSync(done) {
@@ -84,7 +87,8 @@ function css() {
   return preprocesorType
     .pipe(autoprefixer({
       overrideBrowserslist: ['last 5 versions'],
-      cascade: true
+      cascade: true,
+      grid: true
     }))
     .pipe(group_media_queries())
     .pipe(webp_css())
@@ -113,7 +117,8 @@ function js() {
 }
 
 function images() {
-  return src(path.src.img)
+  src(path.src.imgSrc)
+    .pipe(newer(path.src.img))
     .pipe(gulp_webp({
       quality: 70
     }))
@@ -125,6 +130,8 @@ function images() {
       interlaced: true,
       optimizationLevel: 3
     }))
+    .pipe(dest(path.src.imgDist))
+  return src(path.src.img)
     .pipe(dest(path.build.img))
     .pipe(browser_sync.stream())
 }

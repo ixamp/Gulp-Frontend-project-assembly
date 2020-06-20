@@ -11,6 +11,7 @@ This is a ready-made Gulp assembly that you can use to develop your frontend pro
 * <a href="#settings">Settings<a>
   * <a href="#preprocessors">Preprocessors</a>
   * <a href="#folders_and_files">Folders and files</a>
+  * <a href="#images_settings">Images settings</a>
   * <a href="#webp_settings">WEBP settings</a>
     * <a href="#webp_in_html">Webp in html</a>
     * <a href="#webp-in-css">Webp in CSS</a>
@@ -197,7 +198,13 @@ The _ prefixes is only used in html and js files.
 
 ***
 
-<h3 id="webp_settings">3. WEBP settings</h3>
+<h3 id="images_settings">3. Images settings</h3>
+
+You need to insert the images into the '#src/img/src' folder so that the images are optimized and fall into the '#src/img/dist' folder after that they are copied to the folder of the final project, this is done so that every time you start a gulp assembly, the images are not re-optimized but only optimized for new ones.
+
+***
+
+<h3 id="webp_settings">4. WEBP settings</h3>
 
 <h4 id="webp_in_html">Webp in html</h4>
 As I wrote above, webp is a modern picture format for web pages that allows web pages to load faster.
@@ -266,7 +273,7 @@ testWebP(function (support) {
 });
 ```
 
-<h3 id="font-settings">4. Font settings</h3>
+<h3 id="font-settings">5. Font settings</h3>
 
 The most popular font format is .ttf, but not all browsers support this format; there are several popular font formats that cover most browsers (woff, woff2, eot, svg, ttf).<br>
 
@@ -325,7 +332,7 @@ It is also important to include the fonts file after the functions file.
   @import  "main";
 ```
 
-<h3 id="file-include-settings">5. File include settings
+<h3 id="file-include-settings">6. File include settings
 
 Function @@include( ) is used only in html and JS files, this function should not be used in scss and less files, because scss and less have their own function @import('style') and file extension is not required, @import('style') and @import('style.less') both ways will work.
 
