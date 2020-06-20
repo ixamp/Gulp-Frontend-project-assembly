@@ -1,0 +1,40 @@
+.section {
+  width: 100%;
+  display: flex;
+  font-size: 30px;
+
+  h3 {
+    font-size: 22px;
+    color: #ccc
+  }
+}
+
+img {
+  width: 50%;
+  height: auto;
+}
+
+.author {
+  width: 60%;
+  height: auto;
+  font-size: 40px;
+}
+.act {
+  width: 50%;
+  font-family: serif;
+  display: flex;
+
+  >div {
+    width: 50%;
+    height: 200px;
+    background-image: url('../img/author_1.png');
+  }
+}
+
+p {
+  font-size: 23px;
+  color: red;
+  @media (max-width: 768px) {
+    font-size: 20px;
+  }
+}
