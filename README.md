@@ -51,7 +51,7 @@ You can also use this function in javascript files.
 <details>
 <summary><b>Less and sass compilers</b></summary>
 <br>
-You can choose which preprocessor to work with, using the settings object
+You can choose which preprocessor to work with, using the settings object.
 </details>
 
 <details>

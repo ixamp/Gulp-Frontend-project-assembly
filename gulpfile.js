@@ -118,12 +118,12 @@ function js() {
 
 function images() {
   src(path.src.imgSrc)
-    .pipe(newer(path.src.img))
+    .pipe(newer(path.src.imgDist))
     .pipe(gulp_webp({
       quality: 70
     }))
-    .pipe(dest(path.build.img))
-    .pipe(src(path.src.img))
+    .pipe(dest(path.src.imgDist))
+    .pipe(src(path.src.imgSrc))
     .pipe(image_min({
       progressive: true,
       svgoPlugins: [{ removeViewBox: false }],
@@ -135,6 +135,7 @@ function images() {
     .pipe(dest(path.build.img))
     .pipe(browser_sync.stream())
 }
+
 
 function fonts() {
   src(path.src.fonts)
